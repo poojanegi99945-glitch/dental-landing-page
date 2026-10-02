@@ -62,7 +62,7 @@ export function ConcernSelector() {
 export function SmileCheck() {
   const { lead, update, checkDone, setCheckDone } = useLead();
   const [step, setStep] = useState(0);
-  const q = questions[step];
+  const q = questions[step]!;
   const val = lead[q.field];
 
   const toggle = (o: string) => {

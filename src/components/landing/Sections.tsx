@@ -92,7 +92,7 @@ export function Offer() {
   useEffect(() => {
     const el = document.getElementById("book");
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { track("consultation_form_viewed"); io.disconnect(); } });
+    const io = new IntersectionObserver(([e]) => { if (e?.isIntersecting) { track("consultation_form_viewed"); io.disconnect(); } });
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -266,7 +266,7 @@ export function Journey() {
             </button>
           ))}
         </div>
-        <p key={i} className="animate-rise mt-6 rounded-2xl bg-card p-6 font-serif text-xl text-primary">{journey[i][1]}</p>
+        <p key={i} className="animate-rise mt-6 rounded-2xl bg-card p-6 font-serif text-xl text-primary">{journey[i]?.[1]}</p>
       </div>
     </section>
   );
